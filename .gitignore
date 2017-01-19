@@ -88,13 +88,13 @@ ENV/
 # Rope project settings
 .ropeproject
 
-personalwebsite/frontend/node_modules/
-personalwebsite/frontend/assets/bundles/
-personalwebsite/frontend/assets/bundles/**
+mealprep/frontend/node_modules/
+mealprep/frontend/assets/bundles/
+mealprep/frontend/assets/bundles/**
 static/
 env/
 
-personalwebsite/frontend/webpack-stats.json
+mealprep/frontend/webpack-stats.json
 
 *.swp
 *.swo
