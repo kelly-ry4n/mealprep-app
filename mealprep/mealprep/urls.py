@@ -13,9 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import (
+    url,
+    include,
+)
+from rest_framework import routers
+
+import backend.foods.views as foods
+
+router = routers.DefaultRouter()
+router.register('prepped_meals',foods.PreppedMealViewSet)
+router.register('ingredient_quantities',foods.PreppedMealTypeIngredientQuantityViewSet)
+router.register('prepped_meal_types',foods.PreppedMealTypeViewSet)
+router.register('ingredients',foods.IngredientViewSet)
+
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/v1/', include(router.urls, namespace='rest_framework')),
+    url(r'^api-auth', include('rest_framework.urls', namespace='rest_framework')),
 ]
+

@@ -98,3 +98,4 @@ mealprep/frontend/webpack-stats.json
 
 *.swp
 *.swo
+*.sqlite
